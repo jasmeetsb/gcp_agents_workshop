@@ -10,7 +10,7 @@ from google.adk.agents import SequentialAgent
 
 from agent_maths.agent import agent_math
 from agent_grammar.agent import agent_grammar
-from agent_summary.agent import agent_summary
+
 from agent_teaching_assistant.agent import root_agent
 
 from google.cloud import storage
@@ -193,7 +193,7 @@ if __name__ == '__main__':
     if(IS_REMOTE_DEPLOYMENT == 0):
         deployed_agent = deployed_agent_app
     else:
-         deployed_agent = agent_engines.create(deployed_agent_app, display_name="teaching-assistant-agent", requirements=["google-cloud-aiplatform[adk,agent_engines]"], extra_packages = ["./agent_grammar", "./agent_maths", "./agent_summary"])
+         deployed_agent = agent_engines.create(deployed_agent_app, display_name="teaching-assistant-agent2", requirements=["google-cloud-aiplatform[adk,agent_engines]"], extra_packages = ["./agent_grammar", "./agent_maths"])
 
     user_id = "user"
 
